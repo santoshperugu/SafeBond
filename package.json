@@ -1,0 +1,14 @@
+{
+  "name": "safebond",
+  "version": "1.0.0",
+  "description": "Unified runner for SafeBond Matrimony",
+  "scripts": {
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && node index.js",
+    "frontend": "cd frontend && npm run dev",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
