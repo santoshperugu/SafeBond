@@ -154,7 +154,7 @@ const ExploreProfiles = () => {
     const fetchProfiles = async () => {
       try {
         console.log("Fetching exploration profiles...");
-        const { data } = await axios.get('http://localhost:5000/api/profiles/public');
+        const { data } = await axios.get('/api/profiles/public');
         setProfiles(data);
       } catch (error) {
         console.error("Axios Error:", error);

@@ -114,7 +114,7 @@ const BrideExplorer = () => {
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/profiles/public');
+        const { data } = await axios.get('/api/profiles/public');
         // Specifically filter for Grooms in the Bride Explorer
         const grooms = data.filter(p => p.user?.role === 'groom');
         setProfiles(grooms);

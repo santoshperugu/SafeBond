@@ -19,7 +19,7 @@ const BrideDashboard = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/profile', {
+        const { data } = await axios.get('/api/profile', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setProfile(data);

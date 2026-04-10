@@ -133,7 +133,7 @@ const Onboarding = () => {
     uploadFormData.append('file', file);
 
     try {
-      const { data } = await axios.post('http://localhost:5000/api/upload/document', uploadFormData, {
+      const { data } = await axios.post('/api/upload/document', uploadFormData, {
         headers: { 
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -180,7 +180,7 @@ const Onboarding = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/profile', formData, {
+      await axios.post('/api/profile', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       toast.success("Profile updated successfully!");

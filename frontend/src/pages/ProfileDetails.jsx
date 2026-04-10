@@ -25,7 +25,7 @@ const ProfileDetails = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/profile/${id}`);
+        const { data } = await axios.get(`/api/profile/${id}`);
         setProfile(data);
       } catch (error) {
         console.error("Error fetching profile details:", error);
@@ -49,7 +49,7 @@ const ProfileDetails = () => {
     }
     setLoadingReport(true);
     try {
-      const { data } = await axios.get(`http://localhost:5000/api/background/${id}`, {
+      const { data } = await axios.get(`/api/background/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setBgReport(data);

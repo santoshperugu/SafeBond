@@ -31,7 +31,7 @@ const GroomProfileManager = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/profile', {
+        const { data } = await axios.get('/api/profile', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setProfile(data);
@@ -61,7 +61,7 @@ const GroomProfileManager = () => {
     e.preventDefault();
     setSaving(true);
     try {
-      const { data } = await axios.post('http://localhost:5000/api/profile', formData, {
+      const { data } = await axios.post('/api/profile', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setProfile(data);

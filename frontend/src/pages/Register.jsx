@@ -25,7 +25,7 @@ const Register = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const res = await axios.post('/api/auth/register', formData);
       dispatch(loginSuccess({ user: res.data, token: res.data.token }));
       toast.success('Registration successful!');
       navigate('/dashboard');

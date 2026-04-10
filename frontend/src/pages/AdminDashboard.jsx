@@ -29,10 +29,10 @@ const AdminDashboard = () => {
     try {
       setLoading(true);
       const [statsRes, usersRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/admin/dashboard', {
+        axios.get('/api/admin/dashboard', {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get('http://localhost:5000/api/admin/users', {
+        axios.get('/api/admin/users', {
           headers: { Authorization: `Bearer ${token}` }
         })
       ]);
@@ -50,7 +50,7 @@ const AdminDashboard = () => {
     fetchData();
 
     // Setup Socket for Real-time Updates
-    const socket = io('http://localhost:5000');
+    const socket = io('');
     
     socket.on('stats_update', (data) => {
       console.log('Real-time statistics update received:', data);
@@ -64,7 +64,7 @@ const AdminDashboard = () => {
 
   const handleVerify = async (profileId, status) => {
     try {
-      await axios.put(`http://localhost:5000/api/admin/verify/${profileId}`, 
+      await axios.put(`/api/admin/verify/${profileId}`, 
         { status, remarks: `Verified by Admin on ${new Date().toLocaleDateString()}` },
         { headers: { Authorization: `Bearer ${token}` } }
       );

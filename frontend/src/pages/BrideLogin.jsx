@@ -17,7 +17,7 @@ const BrideLogin = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const res = await axios.post('/api/auth/login', formData);
       dispatch(loginSuccess({ user: res.data, token: res.data.token }));
       toast.success('Silk Suite Accessed');
       navigate('/bride/dashboard');
